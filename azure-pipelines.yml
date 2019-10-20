@@ -1,0 +1,18 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: DownloadGitHubRelease@0
+  displayName: 'Download hugo'
+  inputs:
+    connection: 'scorpdx'
+    userRepository: 'gohugoio/hugo'
+    defaultVersionType: 'latest'
+    itemPattern: '*Linux-64bit.tar.gz'
+    downloadPath: '$(System.ArtifactsDirectory)'
+- script: tar -zxvf *.tar.gz hugo
+  displayName: 'Extract hugo'
+- script: hugo
