@@ -15,4 +15,6 @@ steps:
     downloadPath: '$(System.ArtifactsDirectory)'
 - script: tar -zxvf *.tar.gz hugo
   displayName: 'Extract hugo'
+  workingDirectory: '$(System.ArtifactsDirectory)'
 - script: hugo
+  workingDirectory: '$(System.ArtifactsDirectory)'
