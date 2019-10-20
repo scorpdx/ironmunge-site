@@ -11,7 +11,7 @@ steps:
     connection: 'scorpdx github'
     userRepository: 'gohugoio/hugo'
     defaultVersionType: 'latest'
-    itemPattern: '!hugo_extended*;*Linux-64bit.tar.gz'
+    itemPattern: '*Linux-64bit.tar.gz;!hugo_extended*'
     downloadPath: '$(System.ArtifactsDirectory)'
 - script: tar -zxvf *.tar.gz hugo
   displayName: 'Extract hugo'
