@@ -18,3 +18,5 @@ steps:
   workingDirectory: '$(System.ArtifactsDirectory)'
 - script: '$(System.ArtifactsDirectory)/hugo'
   workingDirectory: '$(Build.SourcesDirectory)'
+- publish: '$(Build.SourcesDirectory)/public'
+  artifact: 'docs'
